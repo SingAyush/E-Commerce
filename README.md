@@ -4,4 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## We Will be first doing this Project as a Full Stack Project 
 
-1. I started with the design of the website and will continue.
+1. I started with the design of the website
+   a) Navbar
+   b) Announcement
+   
