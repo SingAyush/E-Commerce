@@ -7,4 +7,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. I started with the design of the website
    a) Navbar
    b) Announcement
-   
+   c) Slider
+      
