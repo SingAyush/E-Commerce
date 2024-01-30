@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
+import { useState } from "react";
+import { sliderItems } from "../data";
 
 const Container = styled.div`
   width: 100%;
@@ -8,6 +10,7 @@ const Container = styled.div`
   display: flex;
   background-color: #f8f6f5;
   position: relative;
+  overflow: hidden;
 `;
 
 const Arrow = styled.div`
@@ -26,10 +29,14 @@ const Arrow = styled.div`
   margin: auto;
   cursor: pointer;
   opacity: 0.5;
+  z-index: 2;
 `;
 
 const Wrapper = styled.div`
   height: 100%;
+  display: flex;
+  transition: all 1.6 ease;
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -37,6 +44,7 @@ const Slide = styled.div`
   width: 100vw;
   height: 100vh;
   align-items: center;
+  background-color: #${(props) => props.bg};
 `;
 const ImgContainer = styled.div`
   height: 100%;
@@ -69,24 +77,34 @@ const Button = styled.button`
 `;
 
 const Slider = () => {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const handleCLick = (direction) => {
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    }
+  };
   return (
     <Container>
-      <Arrow direction="left">
+      <Arrow direction="left" onClick={() => handleCLick("left")}>
         <ArrowBackIosNewOutlinedIcon />
       </Arrow>
-      <Wrapper>
-        <Slide>
-          <ImgContainer>
-            <Image src="https://st.depositphotos.com/2097531/2144/i/450/depositphotos_21440313-stock-photo-attractive-man-dressed-casual-wearing.jpg" />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>Winter Sale</Title>
-            <Desc>Get a Flat 30% Off The New Arrivals.</Desc>
-            <Button>SHOW NOW</Button>
-          </InfoContainer>
-        </Slide>
+      <Wrapper slideIndex={slideIndex}>
+        {sliderItems.map((item) => (
+          <Slide bg={item.bg} key={item.id}>
+            <ImgContainer>
+              <Image src={item.img} />
+            </ImgContainer>
+            <InfoContainer>
+              <Title>{item.title}</Title>
+              <Desc>{item.desc}</Desc>
+              <Button>SHOW NOW</Button>
+            </InfoContainer>
+          </Slide>
+        ))}
       </Wrapper>
-      <Arrow direction="right">
+      <Arrow direction="right" onClick={() => handleCLick("right")}>
         <ArrowForwardIosOutlinedIcon />
       </Arrow>
     </Container>
