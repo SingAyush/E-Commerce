@@ -1,3 +1,4 @@
+
 import { Facebook, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
 import styled from "styled-components";
 
@@ -60,3 +61,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
