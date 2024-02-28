@@ -8,7 +8,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
    a) Navbar
    b) Announcement
    c) Slider
+   c) Newsletter
+   d) Footer
 2. Now I made some features 
    a) Categories
+   b) Products
    
       
