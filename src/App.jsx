@@ -1,7 +1,7 @@
-import Product from "./Pages/Product";
+import Login from "./Pages/Login";
 
 const App = () => {
-  return <Product />;
+  return <Login />;
 };
 
 export default App;
