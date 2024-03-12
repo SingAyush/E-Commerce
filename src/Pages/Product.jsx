@@ -85,7 +85,7 @@ const Amount = styled.span`
   width: 33px;
   height: 33px;
   border-radius: 11px;
-  border: 1px solid #319849;
+  border: 1px solid #ea7c51;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +94,7 @@ const Amount = styled.span`
 
 const Button = styled.button`
   padding: 15px;
-  border: 1px solid #319849;
+  border: 1px solid #ea835b;
   background-color: white;
   cursor: pointer;
   font-weight: 400;

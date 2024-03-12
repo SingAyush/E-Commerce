@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: #72b8c0;
+  background-color: #cb8467;
   padding: 20px;
   width: 40%;
 `;
@@ -53,7 +53,7 @@ const Button = styled.button`
   width: 40%;
   border: none;
   padding: 15px 20px;
-  background-color: teal;
+  background-color: #7f432c;
   color: white;
   cursor: pointer;
 `;
