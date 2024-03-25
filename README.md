@@ -13,5 +13,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. Now I made some features 
    a) Categories
    b) Products
+   c) Cart
+   d) Login
+   e) Register
+   
    
       
