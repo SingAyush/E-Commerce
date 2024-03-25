@@ -3,40 +3,34 @@ import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutl
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import { useState } from "react";
 import { sliderItems } from "../data";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
-  width: 100%;
-  height: 100vh;
   display: flex;
-  background-color: #f8f6f5;
-  position: relative;
   overflow: hidden;
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  ${mobile({ display: "none" })}
 `;
 
 const Arrow = styled.div`
-  width: 50px;
-  height: 50px;
-  background-color: #efe3e3;
-  border-radius: 50%;
+  height: 51px;
+  width: 51px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  border-radius: 49%;
+  background-color: #efe3e3;
   top: 0;
   bottom: 0;
-  left: ${(props) => props.direction === "left" && "10px"};
-  right: ${(props) => props.direction === "right" && "10px"};
+  position: absolute;
   margin: auto;
+  right: ${(props) => props.direction === "right" && "10px"};
+  left: ${(props) => props.direction === "left" && "10px"};
   cursor: pointer;
   opacity: 0.5;
   z-index: 2;
-`;
-
-const Wrapper = styled.div`
-  height: 100%;
-  display: flex;
-  transition: all 1.6 ease;
-  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -46,13 +40,20 @@ const Slide = styled.div`
   align-items: center;
   background-color: #${(props) => props.bg};
 `;
-const ImgContainer = styled.div`
+
+const Wrapper = styled.div`
+  display: flex;
   height: 100%;
-  flex: 1;
+  transition: all 1.6 ease;
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Image = styled.img`
   height: 80%;
+`;
+const ImgContainer = styled.div`
+  flex: 1;
+  height: 100%;
 `;
 
 const InfoContainer = styled.div`
@@ -63,16 +64,18 @@ const InfoContainer = styled.div`
 const Title = styled.h1`
   font-size: 70px;
 `;
+
 const Desc = styled.p`
-  margin: 50px 0px;
-  font-size: 20px;
+  margin: 49px 0px;
+  font-size: 21px;
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 3.5px;
 `;
+
 const Button = styled.button`
-  padding: 10px;
-  font-size: 20px;
   cursor: pointer;
+  font-size: 20.5px;
+  padding: 11px;
   background-color: transparent;
 `;
 
